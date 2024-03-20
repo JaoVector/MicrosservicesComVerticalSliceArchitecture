@@ -17,6 +17,7 @@ acumular itens de batalha. E a Game.Gateway.API é responsável por criar um rot
 - Docker
 - Kubernetes
 - SQL Server
+- Ocelot
 #
 ## Modelo de Dados
 ### ItemBatalha Categorias
@@ -216,4 +217,78 @@ builder.Services.AddMassTransit(busConfig =>
         configurator.ConfigureEndpoints(context);
     });
 });
+```
+#
+### Configuração da GatewayAPI utilizando Ocelot
+```json
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/v1/ItemBatalha",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamPathTemplate": "/api/v1/ItemBatalha",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game.catalogo.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/v1/ItemBatalha/{ItemId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamPathTemplate": "/api/v1/ItemBatalha/{ItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game.catalogo.api",
+          "Port": 80
+        }
+      ]
+    },
+
+    //Inventario Web Api "api/v1/ItemInventario"
+    {
+      "UpstreamPathTemplate": "/gateway/v1/ItemInventario",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/v1/ItemInventario",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game.inventario.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/v1/ItemInventario/{PersonagemId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/v1/ItemInventario/{PersonagemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game.inventario.api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/v1/ItemInventario/{ItemIventId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/api/v1/ItemInventario/{ItemIventId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "game.inventario.api",
+          "Port": 80
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5003",
+    "AdministrationPath": "/administration"
+  }
+}
 ```
