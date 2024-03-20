@@ -1,0 +1,193 @@
+name: dockercompose10384677466761775434
+services:
+  catalogo-db:
+    container_name: catalogo-database
+    depends_on:
+      inventario-db:
+        condition: service_started
+        required: true
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      MSSQL_TCP_PORT: "1433"
+      SA_PASSWORD: 3jo@oVictor360
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: D:\C#_Projetos\MicrosservicesProject\ .containers\catalogo-db
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+  game.catalogo.api:
+    build:
+      context: D:\C#_Projetos\MicrosservicesProject
+      dockerfile: Game.Catalogo.Api/Dockerfile
+    container_name: Catalogo.Service
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: gamecatalogoapi
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  game.gateway.api:
+    build:
+      context: D:\C#_Projetos\MicrosservicesProject
+      dockerfile: Game.Gateway.Api/Dockerfile
+    container_name: Gateway.Api
+    depends_on:
+      catalogo-db:
+        condition: service_started
+        required: true
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: gamegatewayapi
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "5003"
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  game.inventario.api:
+    build:
+      context: D:\C#_Projetos\MicrosservicesProject
+      dockerfile: Game.Inventario.Api/Dockerfile
+    container_name: Inventario.Service
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: gameinventarioapi
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Jo4oV\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  inventario-db:
+    container_name: inventario-database
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      MSSQL_TCP_PORT: "5432"
+      SA_PASSWORD: 3jo@oVictor360
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: D:\C#_Projetos\MicrosservicesProject\ .containers\inventario-db
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+  rabbitmq:
+    container_name: rabbitmq-amqp
+    environment:
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+    hostname: game-services
+    image: rabbitmq:management
+    networks:
+      microsservices: null
+    ports:
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: D:\C#_Projetos\MicrosservicesProject\ .containers\queue\data
+        target: /var/lib/rabbitmq
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\C#_Projetos\MicrosservicesProject\ .containers\queue\log
+        target: /var/log/rabbitmq
+        bind:
+          create_host_path: true
+networks:
+  microsservices:
+    name: dockercompose10384677466761775434_microsservices
+    driver: bridge

@@ -1,9 +1,51 @@
-version: "3.8"
+version: '3.9'
 
 services:
+  game.gateway.api:
+    image: ${DOCKER_REGISTRY-}gamegatewayapi
+    container_name: Gateway.Api
+    build:
+      context: .
+      dockerfile: Game.Gateway.Api/Dockerfile
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5003:80"
+    depends_on:
+      - rabbitmq
+      - catalogo-db
+    networks:
+      - microsservices
+
+  game.catalogo.api:
+    image: ${DOCKER_REGISTRY-}gamecatalogoapi
+    container_name: Catalogo.Service
+    build:
+      context: .
+      dockerfile: Game.Catalogo.Api/Dockerfile
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - rabbitmq
+    networks:
+      - microsservices
+
+  game.inventario.api:
+    image: ${DOCKER_REGISTRY-}gameinventarioapi
+    container_name: Inventario.Service
+    build:
+      context: .
+      dockerfile: Game.Inventario.Api/Dockerfile
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - rabbitmq
+    networks:
+      - microsservices
+
   rabbitmq:
     image: rabbitmq:management
-    container_name: rabbitmq
+    container_name: rabbitmq-amqp
     ports:
       - 5672:5672
       - 15672:15672
@@ -14,3 +56,41 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - microsservices
+
+  catalogo-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: catalogo-database
+    volumes:
+      - ./ .containers/catalogo-db:/var/opt/mssql/data
+    ports:
+      - "1433:1433"
+    depends_on:
+      - inventario-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "3jo@oVictor360"
+      MSSQL_PID: "Express"
+      MSSQL_TCP_PORT: "1433"
+    networks:
+      - microsservices
+
+  inventario-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: inventario-database
+    volumes:
+      - ./ .containers/inventario-db:/var/opt/mssql/data
+    ports:
+      - "5432:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "3jo@oVictor360"
+      MSSQL_PID: "Express"
+      MSSQL_TCP_PORT: "5432"
+    networks:
+      - microsservices
+
+networks:
+  microsservices:
+     driver: bridge

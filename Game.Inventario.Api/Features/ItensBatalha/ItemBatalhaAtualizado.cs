@@ -1,6 +1,5 @@
 ﻿using Game.Common;
 using Game.Common.Events.ItensBatalha;
-using Game.Inventario.Api.Entities;
 using Game.Inventario.Api.Features.ItensBatalha.Repository;
 using MassTransit;
 

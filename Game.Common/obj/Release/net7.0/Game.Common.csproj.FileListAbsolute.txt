@@ -1,0 +1,13 @@
+D:\C#_Projetos\MicrosservicesProject\Game.Common\bin\Release\net7.0\Game.Common.deps.json
+D:\C#_Projetos\MicrosservicesProject\Game.Common\bin\Release\net7.0\Game.Common.dll
+D:\C#_Projetos\MicrosservicesProject\Game.Common\bin\Release\net7.0\Game.Common.pdb
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.csproj.AssemblyReference.cache
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.AssemblyInfoInputs.cache
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.AssemblyInfo.cs
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.csproj.CoreCompileInputs.cache
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.dll
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\refint\Game.Common.dll
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.pdb
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\ref\Game.Common.dll
+D:\C#_Projetos\MicrosservicesProject\Game.Common\obj\Release\net7.0\Game.Common.sourcelink.json

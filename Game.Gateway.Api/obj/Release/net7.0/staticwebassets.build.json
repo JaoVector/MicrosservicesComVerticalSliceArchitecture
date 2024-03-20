@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xkpdGSuze9O8usVqQr7qfvinFXmPYkzbRH/Y6AcvzK4=",
+  "Source": "Game.Gateway.Api",
+  "BasePath": "_content/Game.Gateway.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

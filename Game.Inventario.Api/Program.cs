@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(sql => sql.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
 
+
 var assembly = typeof(Program).Assembly;
 
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblies(assembly));
