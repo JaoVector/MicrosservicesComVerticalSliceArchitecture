@@ -9,10 +9,7 @@ namespace Game.Catalogo.Api.Features.ItensBatalha
 {
     public static class ConsultaItemBatalhaPorId
     {
-        public sealed record Query : IRequest<ItemBatalhaResponse> 
-        {
-            public Guid ItemId { get; set; }
-        }
+        public sealed record Query(Guid ItemId) : IRequest<ItemBatalhaResponse>;
 
         internal sealed class Handler : IRequestHandler<Query, ItemBatalhaResponse>
         {
@@ -42,9 +39,12 @@ namespace Game.Catalogo.Api.Features.ItensBatalha
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapGet("api/v1/ItemBatalha/{ItemId}", async (Guid id, ISender sender) => 
+            app.MapGet("api/v1/ItemBatalha/{ItemId}", async (Guid? itemId, ISender sender) => 
             {
-                var query = new ConsultaItemBatalhaPorId.Query { ItemId = id };
+
+                if (itemId is null) return Results.BadRequest("O Id esta vazio");
+
+                var query = new ConsultaItemBatalhaPorId.Query(itemId.Value);
 
                 var result = await sender.Send(query);
 

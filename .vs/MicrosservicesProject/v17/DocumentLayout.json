@@ -1,12 +1,139 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\C#_Projetos\\MicrosservicesProject\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.catalogo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|solutionrelative:game.catalogo.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78232BBE-FD7A-4FE2-BA49-125271F3953A}|Game.Inventario.Api\\Game.Inventario.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.inventario.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{78232BBE-FD7A-4FE2-BA49-125271F3953A}|Game.Inventario.Api\\Game.Inventario.Api.csproj|solutionrelative:game.inventario.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.catalogo.api\\features\\itensbatalha\\consultaitembatalhaporid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|solutionrelative:game.catalogo.api\\features\\itensbatalha\\consultaitembatalhaporid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.catalogo.api\\features\\itensbatalha\\deletaitembatalha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|solutionrelative:game.catalogo.api\\features\\itensbatalha\\deletaitembatalha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.catalogo.api\\features\\itensbatalha\\atualizaitembatalha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|solutionrelative:game.catalogo.api\\features\\itensbatalha\\atualizaitembatalha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78232BBE-FD7A-4FE2-BA49-125271F3953A}|Game.Inventario.Api\\Game.Inventario.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.inventario.api\\features\\itensinventario\\excluiiteminventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78232BBE-FD7A-4FE2-BA49-125271F3953A}|Game.Inventario.Api\\Game.Inventario.Api.csproj|solutionrelative:game.inventario.api\\features\\itensinventario\\excluiiteminventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|d:\\c#_projetos\\microsservicesproject\\game.catalogo.api\\game.catalogo.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C972D4A8-23D3-471F-A7E7-4CF5174A993D}|Game.Catalogo.Api\\Game.Catalogo.Api.csproj|solutionrelative:game.catalogo.api\\game.catalogo.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsultaItemBatalhaPorId.cs",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\ConsultaItemBatalhaPorId.cs",
+              "RelativeDocumentMoniker": "Game.Catalogo.Api\\Features\\ItensBatalha\\ConsultaItemBatalhaPorId.cs",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\ConsultaItemBatalhaPorId.cs",
+              "RelativeToolTip": "Game.Catalogo.Api\\Features\\ItensBatalha\\ConsultaItemBatalhaPorId.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAIwDEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T17:28:27.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Inventario.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Game.Inventario.Api\\appsettings.json",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Inventario.Api\\appsettings.json",
+              "RelativeToolTip": "Game.Inventario.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-20T14:10:47.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Game.Catalogo.Api\\appsettings.json",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\appsettings.json",
+              "RelativeToolTip": "Game.Catalogo.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-20T12:39:28.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeletaItemBatalha.cs",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\DeletaItemBatalha.cs",
+              "RelativeDocumentMoniker": "Game.Catalogo.Api\\Features\\ItensBatalha\\DeletaItemBatalha.cs",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\DeletaItemBatalha.cs",
+              "RelativeToolTip": "Game.Catalogo.Api\\Features\\ItensBatalha\\DeletaItemBatalha.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T17:38:34.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AtualizaItemBatalha.cs",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\AtualizaItemBatalha.cs",
+              "RelativeDocumentMoniker": "Game.Catalogo.Api\\Features\\ItensBatalha\\AtualizaItemBatalha.cs",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Features\\ItensBatalha\\AtualizaItemBatalha.cs",
+              "RelativeToolTip": "Game.Catalogo.Api\\Features\\ItensBatalha\\AtualizaItemBatalha.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAcwBUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T17:39:49.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExcluiItemInventario.cs",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Inventario.Api\\Features\\ItensInventario\\ExcluiItemInventario.cs",
+              "RelativeDocumentMoniker": "Game.Inventario.Api\\Features\\ItensInventario\\ExcluiItemInventario.cs",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Inventario.Api\\Features\\ItensInventario\\ExcluiItemInventario.cs",
+              "RelativeToolTip": "Game.Inventario.Api\\Features\\ItensInventario\\ExcluiItemInventario.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAIwC8AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T17:36:01.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.Catalogo.Api",
+              "DocumentMoniker": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Game.Catalogo.Api.csproj",
+              "RelativeDocumentMoniker": "Game.Catalogo.Api\\Game.Catalogo.Api.csproj",
+              "ToolTip": "D:\\C#_Projetos\\MicrosservicesProject\\Game.Catalogo.Api\\Game.Catalogo.Api.csproj",
+              "RelativeToolTip": "Game.Catalogo.Api\\Game.Catalogo.Api.csproj",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-20T14:00:19.977Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

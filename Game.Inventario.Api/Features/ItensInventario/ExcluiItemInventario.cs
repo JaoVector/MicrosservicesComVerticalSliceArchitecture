@@ -41,11 +41,11 @@ namespace Game.Inventario.Api.Features.ItensInventario
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapDelete("api/v1/ItemInventario/{ItemIventId}", async (Guid? ItemId, ISender sender) =>
+            app.MapDelete("api/v1/ItemInventario/{ItemIventId}", async (Guid? itemIventId, ISender sender) =>
             {
-                if (ItemId is null) return Results.BadRequest("Campo Id precisa ser preenchido");
+                if (itemIventId is null) return Results.BadRequest("Campo Id precisa ser preenchido");
 
-                var request = new ExcluiItemInventario.Query(ItemId.Value);
+                var request = new ExcluiItemInventario.Query(itemIventId.Value);
 
                 var result = await sender.Send(request);
 

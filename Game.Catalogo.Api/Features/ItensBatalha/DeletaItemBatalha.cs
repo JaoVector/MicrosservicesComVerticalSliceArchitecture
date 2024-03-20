@@ -59,11 +59,11 @@ namespace Game.Catalogo.Api.Features.ItensBatalha
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapDelete("api/v1/ItemBatalha/{ItemId}", async (Guid? Id, ISender sender) => 
+            app.MapDelete("api/v1/ItemBatalha/{ItemId}", async (Guid? itemId, ISender sender) => 
             {
-                if(Id is null) return Results.BadRequest("O Id esta vazio");
+                if(itemId is null) return Results.BadRequest("O Id esta vazio");
 
-                var request = new DeletaItemBatalha.Command(Id.Value);
+                var request = new DeletaItemBatalha.Command(itemId.Value);
 
                 var result = await sender.Send(request);
 

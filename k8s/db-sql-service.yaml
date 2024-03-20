@@ -21,11 +21,11 @@ spec:
         image: mcr.microsoft.com/mssql/server:2019-latest
         resources:
           requests:
-            memory: "1G"
-            cpu: "1000m"
+            memory: "2G"
+            cpu: "2000m"
           limits:
-            memory: "1G"
-            cpu: "1000m"
+            memory: "2G"
+            cpu: "2000m"
         ports:
         - containerPort: 1433
         env:
@@ -49,12 +49,25 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mssql-deployment
+  name: mssql-deployment-clusterip
 spec:
+  type: ClusterIP
   selector:
     app: mssql
   ports:
     - protocol: TCP
       port: 1433
       targetPort: 1433
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-deployment-loadbalancer
+spec:
   type: LoadBalancer
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
