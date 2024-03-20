@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: api-catalogo-container
-          image: jo4ovictor/gamecatalogoapi:v2
+          image: <sua-imagem>
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
